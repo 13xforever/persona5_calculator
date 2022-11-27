@@ -12,6 +12,7 @@
 <table id="list" cellspacing="0" class="ui table striped sortable unstackable" sticky-table>
     <thead>
     <tr>
+        <th><a ng-click="sortBy = 'own'; sortReverse = !sortReverse">Own</a></th>
         <th><a ng-click="sortBy = 'level'; sortReverse = !sortReverse">Level</a></th>
         <th><a ng-click="sortBy = 'name'; sortReverse = !sortReverse">Name</a></th>
         <th><a ng-click="sortBy = 'arcana'; sortReverse = !sortReverse">Arcana</a></th>
@@ -34,10 +35,13 @@
     </thead>
     <tbody>
     <tr ng:repeat="persona in fullPersonaList | orderBy:sortFunc:sortReverse | filter:filterStr">
-        <td>{{persona.level}}</td>
+        <td style="text-align:center">
+            <input type="checkbox" ng-model="persona.own" ng-if="!persona.dlc" ng-click="changeOwn($event, persona)"/>
+            <span class="dlc-label" ng-if="persona.dlc">DLC</span>
+        </td>
+        <td class="left-border">{{persona.level}}</td>
         <td class="left-border">
             <a class="persona-name" href='#/persona/{{persona.name}}'>{{persona.name}}</a>
-            <span class="dlc-label" ng-if="persona.dlc">DLC</span>
         </td>
         <td class="left-border">{{persona.arcana}}</td>
 

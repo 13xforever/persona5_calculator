@@ -6,6 +6,7 @@ var PersonaListController = /** @class */ (function () {
     function PersonaListController($scope) {
         this.$scope = $scope;
         $scope.fullPersonaList = fullPersonaList;
+        $scope.changeOwn = this.changeOwn;
         // set the default sort param
         $scope.sortBy = 'level';
         $scope.sortReverse = false;
@@ -18,6 +19,15 @@ var PersonaListController = /** @class */ (function () {
         }
         else {
             return item[sortBy];
+        }
+    };
+    PersonaListController.prototype.changeOwn = function (evt, persona) {
+        var key = "owns ".concat(persona.name);
+        if (evt.target.checked) {
+            localStorage[key] = "1";
+        }
+        else {
+            localStorage.removeItem(key);
         }
     };
     return PersonaListController;

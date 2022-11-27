@@ -29,6 +29,14 @@ function isDlcPersonaOwned(dlcPersona: string): boolean {
     return JSON.parse(localStorage["dlcPersona"])[dlcPersona] === true;
 }
 
+function isOwned(persona: string): boolean {
+    let key = `owns ${persona}`;
+    if (isDlcPersonaOwned(persona)) return true;
+    if (!localStorage[key]) return false;
+
+    return localStorage[key] === "1";
+}
+
 /**
  * List of persona with DLC persona potentially removed based on user config
  */
@@ -40,9 +48,11 @@ const customPersonaList: PersonaData[] = (() =>{
             if (persona.dlc && !isDlcPersonaOwned(key)) {
                 continue;
             }
+
             persona.name = key;
             addStatProperties(persona);
             addElementProperties(persona);
+            persona.own = isOwned(key);
             arr.push(persona);
         }
     }

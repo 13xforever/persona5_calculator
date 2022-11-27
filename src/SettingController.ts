@@ -7,7 +7,7 @@ class SettingController {
         $scope.save = this.save;
 
         for (let i = 0; i < dlcPersona.length; i++) {
-            dlcPersona[i][2] = (isDlcPersonaOwned(dlcPersona[i][0])? "y" : "n");
+            dlcPersona[i][2] = (isDlcPersonaOwned(dlcPersona[i][0]) ? "y" : "n");
         }
     }
 
@@ -24,6 +24,6 @@ class SettingController {
             localStorage["dlcPersona"] = JSON.stringify(config);
         }
 
-        window.location.href = GLOBAL_IS_ROYAL? "indexRoyal.html" : "index.html";
+        window.location.href = GLOBAL_IS_ROYAL ? "indexRoyal.html" : "index.html";
     }
 }

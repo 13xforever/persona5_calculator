@@ -104,14 +104,28 @@ tr:hover td:last-child {
     font-weight: bold;
 }
 
-.wk, .Weak { color: #db2828 !important; }
-.rs, .Resist { color: #2185d0 !important; }
-.nu, .Null { color: #b0b0b0 !important; }
-.rp, .Repel { color: #fbbd08 !important; }
-.ab, .Absorb { color: #21ba45 !important; }
+.wk, .Weak {
+    color: #db2828 !important;
+}
+
+.rs, .Resist {
+    color: #2185d0 !important;
+}
+
+.nu, .Null {
+    color: #b0b0b0 !important;
+}
+
+.rp, .Repel {
+    color: #fbbd08 !important;
+}
+
+.ab, .Absorb {
+    color: #21ba45 !important;
+}
 
 .left-border {
-    border-left: 1px solid rgba(34,36,38,.1) !important;
+    border-left: 1px solid rgba(34, 36, 38, .1) !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -143,7 +157,10 @@ tr:hover td:last-child {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
-    margin-left: 5px;
+}
+
+td.center {
+    text-align: center;
 }
 
 .persona-name {
@@ -151,6 +168,7 @@ tr:hover td:last-child {
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
+
     .search-label,
     select,
     textarea,
@@ -158,6 +176,7 @@ tr:hover td:last-child {
     .ui.input input {
         font-size: 16px;
     }
+
     .ui.button.clear-button {
         padding: 1.4em 1.5em;
     }

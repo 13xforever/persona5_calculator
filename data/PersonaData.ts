@@ -17,6 +17,7 @@ interface PersonaData {
     special?: boolean;
     max?: boolean;
     dlc?: boolean;
+    own?: boolean;
     note?: string;
     rare?: boolean;
 

@@ -24,6 +24,14 @@ function isDlcPersonaOwned(dlcPersona) {
         return false;
     return JSON.parse(localStorage["dlcPersona"])[dlcPersona] === true;
 }
+function isOwned(persona) {
+    var key = "owns ".concat(persona);
+    if (isDlcPersonaOwned(persona))
+        return true;
+    if (!localStorage[key])
+        return false;
+    return localStorage[key] === "1";
+}
 /**
  * List of persona with DLC persona potentially removed based on user config
  */
@@ -38,6 +46,7 @@ var customPersonaList = (function () {
             persona.name = key;
             addStatProperties(persona);
             addElementProperties(persona);
+            persona.own = isOwned(key);
             arr.push(persona);
         }
     }
@@ -199,7 +208,7 @@ function getSkillPersonaList(skill) {
     return str;
 }
 function createPersonaLink(personaName) {
-    return "<a href='#/persona/" + personaName + "'>" + personaName + "</a>";
+    return "<a href='#/persona/".concat(personaName, "'>").concat(personaName, "</a>");
 }
 function capitalizeFirstLetter(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
