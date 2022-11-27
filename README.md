@@ -1,11 +1,13 @@
-[![Build Status](https://github.com/chinhodado/persona5_calculator/workflows/build/badge.svg)](https://github.com/chinhodado/persona5_calculator/actions?workflow=build)
+[![Build Status](https://github.com/13xforever/persona5_calculator/workflows/build/badge.svg)](https://github.com/13xforever/persona5_calculator/actions?workflow=build)
 
 
 ### Persona 5 fusion calculator
 
-A tool to help calculate fusions in Persona 5.
+A tool to help calculate fusions in Persona 5 with custom additions.
 
-Link: https://chinhodado.github.io/persona5_calculator/
+Link: https://13xforever.github.io/persona5_calculator/
+
+Original: https://chinhodado.github.io/persona5_calculator/
 
 Also included are information about a persona's stats, elementals and skills.
 
@@ -29,7 +31,7 @@ In general, fusion in Persona 5 is still mostly the same as in Persona 3 and 4, 
  
  - There are DLC persona. If you don't own a DLC persona, it will be skipped during fusion.
  
-This calculator assumes that you own **no** DLC persona by default (you can change which DLC persona you own [here](https://chinhodado.github.io/persona5_calculator/#/setting)). It also assumes that when you do a rare fusion your persona is at the **base level**, so please keep that in mind if you don't get the same result as shown.
+This calculator assumes that you own **no** DLC persona by default (you can change which DLC persona you own [here](https://13xforever.github.io/persona5_calculator/#/setting)). It also assumes that when you do a rare fusion your persona is at the **base level**, so please keep that in mind if you don't get the same result as shown.
 
 ### Note on fusion with Judgement arcana
 
